@@ -9,10 +9,11 @@ import (
 
 // VideoDetails contains details from API.
 type VideoDetails struct {
-	Title       string `xml:"thumb>title"`
-	Description string `xml:"thumb>description"`
-	Type        string `xml:"thumb>movie_type"`
-	Error       string `xml:"error>code"`
+	Title       string   `xml:"thumb>title"`
+	Description string   `xml:"thumb>description"`
+	Tags        []string `xml:"thumb>tags>tag"`
+	Type        string   `xml:"thumb>movie_type"`
+	Error       string   `xml:"error>code"`
 }
 
 // GetVideoDetails takes video ID and returns details.
