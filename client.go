@@ -1,10 +1,11 @@
 package nicovideo
 
 import (
-	"code.google.com/p/go.net/publicsuffix"
 	"errors"
 	"net/http"
 	"net/http/cookiejar"
+
+	"code.google.com/p/go.net/publicsuffix"
 )
 
 // Client manages cookies.
@@ -19,7 +20,7 @@ const redirectError = "no redirect"
 func NewClient() *Client {
 	jar, _ := cookiejar.New(
 		&cookiejar.Options{
-			publicsuffix.List,
+			PublicSuffixList: publicsuffix.List,
 		},
 	)
 
